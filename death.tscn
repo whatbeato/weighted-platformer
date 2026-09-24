@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dd5ljll0jvfbq"]
+
+[node name="Control" type="Control" unique_id=1509128011]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=333145040]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 185.0
+offset_right = 945.0
+offset_bottom = 493.0
+theme_override_font_sizes/font_size = 25
+text = "you lost... no whimsy.... no joy :(
+
+you shall now get fined. muehehe"
+horizontal_alignment = 1
+vertical_alignment = 1

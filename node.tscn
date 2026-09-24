@@ -38,7 +38,7 @@ size = Vector2(11115.5, 961)
 [node name="Node" type="Node" unique_id=1709533432]
 script = ExtResource("1_bss38")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=254868025]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=254868025 groups=["player"]]
 position = Vector2(306, 487)
 script = ExtResource("1_j2q8x")
 
