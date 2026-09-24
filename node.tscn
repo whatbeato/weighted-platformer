@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://d0lbnjmkwqjdp" path="res://images/brown.png" id="5_tda05"]
 [ext_resource type="PackedScene" uid="uid://r8qm33fbv21c" path="res://coin.tscn" id="6_tda05"]
 [ext_resource type="PackedScene" uid="uid://cm1lea61l6hld" path="res://hud.tscn" id="7_qn3nj"]
+[ext_resource type="Script" uid="uid://7inseljtusmn" path="res://finish.gd" id="8_l6pdb"]
+[ext_resource type="Script" uid="uid://c6kt7w3cd6oqg" path="res://death.gd" id="9_f0urt"]
+[ext_resource type="Script" uid="uid://cfbl6e0bok4t2" path="res://collision_shape_2d.gd" id="9_r657h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_we46g"]
 size = Vector2(59, 175.125)
@@ -25,6 +28,12 @@ texture = ExtResource("5_tda05")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_bss38")
 sources/1 = SubResource("TileSetAtlasSource_qn3nj")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75a1e"]
+size = Vector2(769, 131)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kicq"]
+size = Vector2(11115.5, 961)
 
 [node name="Node" type="Node" unique_id=1709533432]
 script = ExtResource("1_bss38")
@@ -80,3 +89,20 @@ position = Vector2(7379, 167)
 position = Vector2(6323, 342)
 
 [node name="HUD" parent="." unique_id=982001479 instance=ExtResource("7_qn3nj")]
+
+[node name="Finish" type="Area2D" parent="." unique_id=508008003]
+position = Vector2(8518, 431)
+script = ExtResource("8_l6pdb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish" unique_id=160209268]
+position = Vector2(-4.5, -55.5)
+shape = SubResource("RectangleShape2D_75a1e")
+
+[node name="Death" type="Area2D" parent="." unique_id=6229758]
+position = Vector2(-167, 1492)
+script = ExtResource("9_f0urt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death" unique_id=623284688]
+position = Vector2(5386.25, 353.5)
+shape = SubResource("RectangleShape2D_5kicq")
+script = ExtResource("9_r657h")
