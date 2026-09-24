@@ -9,3 +9,4 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D):
 	if body.name == "Player":
 		Global.add_coin()
+		queue_free()
