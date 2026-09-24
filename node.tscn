@@ -1,0 +1,47 @@
+[gd_scene format=4 uid="uid://cfdopnb6fgkvi"]
+
+[ext_resource type="Script" uid="uid://crq1vh40go4c3" path="res://global.gd" id="1_bss38"]
+[ext_resource type="Script" uid="uid://cxtuaxq2q1emb" path="res://player.gd" id="1_j2q8x"]
+[ext_resource type="Texture2D" uid="uid://b3u1knp6do6no" path="res://images/person.png" id="2_112p8"]
+[ext_resource type="Texture2D" uid="uid://c5v4v1fwfxyv5" path="res://images/pixil-frame-0.png" id="3_e2u21"]
+[ext_resource type="Texture2D" uid="uid://d0lbnjmkwqjdp" path="res://images/brown.png" id="5_tda05"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_we46g"]
+size = Vector2(60, 173)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bss38"]
+texture = ExtResource("3_e2u21")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qn3nj"]
+texture = ExtResource("5_tda05")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_1uojd"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_bss38")
+sources/1 = SubResource("TileSetAtlasSource_qn3nj")
+
+[node name="Node" type="Node" unique_id=1709533432]
+script = ExtResource("1_bss38")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=254868025]
+script = ExtResource("1_j2q8x")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1560154446]
+position = Vector2(2, -1)
+scale = Vector2(0.24333334, 0.22235577)
+texture = ExtResource("2_112p8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1193436594]
+position = Vector2(3, -1.5)
+shape = SubResource("RectangleShape2D_we46g")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1967992201]
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAMAAIAAAAAAAAAAAANAAIAAAAAAAAAAAAOAAIAAAAAAAAAAAAPAAIAAAAAAAAAAAAQAAIAAAAAAAAAAAARAAIAAAAAAAAAAAASAAIAAAAAAAAAAAATAAIAAAAAAAAAAAAHAP3/AAAAAAAAAAAIAP3/AAAAAAAAAAAJAP3/AAAAAAAAAAAKAP3/AAAAAAAAAAALAP3/AAAAAAAAAAAHAP7/AQAAAAAAAAAIAP7/AQAAAAAAAAAJAP7/AQAAAAAAAAAKAP7/AQAAAAAAAAALAP7/AQAAAAAAAAAVAAAAAQAAAAAAAAAVAAEAAQAAAAAAAAAVAAIAAQAAAAAAAAAWAAAAAQAAAAAAAAAWAAEAAQAAAAAAAAAWAAIAAQAAAAAAAAAVAP//AAAAAAAAAAAWAP//AAAAAAAAAAAaAP3/AAAAAAAAAAAbAP3/AAAAAAAAAAAaAP7/AQAAAAAAAAAbAP7/AQAAAAAAAAAbAP//AQAAAAAAAAAbAAAAAQAAAAAAAAAbAAEAAQAAAAAAAAAbAAIAAQAAAAAAAAAaAAIAAQAAAAAAAAAaAAEAAQAAAAAAAAAaAAAAAQAAAAAAAAAaAP//AQAAAAAAAAAgAP7/AQAAAAAAAAAhAP7/AQAAAAAAAAAiAP7/AQAAAAAAAAAjAP7/AQAAAAAAAAAkAP7/AQAAAAAAAAAgAP3/AAAAAAAAAAAhAP3/AAAAAAAAAAAiAP3/AAAAAAAAAAAjAP3/AAAAAAAAAAAkAP3/AAAAAAAAAAAoAAAAAAAAAAAAAAApAAAAAAAAAAAAAAAqAAAAAAAAAAAAAAAvAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAxAAAAAAAAAAAAAAAyAAAAAAAAAAAAAAAzAAAAAAAAAAAAAAArAAQAAAAAAAAAAAAsAAQAAAAAAAAAAAAtAAQAAAAAAAAAAAAuAAQAAAAAAAAAAAA2AP3/AAAAAAAAAAA3AP3/AAAAAAAAAAA4AP3/AAAAAAAAAAA5AP3/AAAAAAAAAAA6AP3/AAAAAAAAAAA9AP//AAAAAAAAAAA+AP//AAAAAAAAAAA/AP//AAAAAAAAAABAAP//AAAAAAAAAABFAP3/AQAAAAAAAABFAP7/AQAAAAAAAABFAP//AQAAAAAAAABFAAAAAQAAAAAAAABFAPz/AAAAAAAAAABJAPz/AAAAAAAAAABKAPz/AAAAAAAAAABJAP3/AQAAAAAAAABJAP7/AQAAAAAAAABJAP//AQAAAAAAAABKAP//AQAAAAAAAABKAAAAAQAAAAAAAABJAAAAAQAAAAAAAABKAP3/AQAAAAAAAABKAP7/AQAAAAAAAAA=")
+tile_set = SubResource("TileSet_1uojd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1314423651]
